@@ -54,7 +54,7 @@ public class HasilActivity extends Activity implements View.OnClickListener {
         // jawaban benar, jika salah maka tampilkan salah
         if (jawab.equals("benar") && kuis.equals("gambar")) {
             // set jawaban benar
-            textViewJawab.setText(jawab);
+            textViewJawab.setText("Jawaban Benar");
 
             // panggil method tambah nilai
             TempScore.addScoreGambar();
@@ -62,7 +62,7 @@ public class HasilActivity extends Activity implements View.OnClickListener {
             textViewScore.setText(TempScore.getScore_gambar() + "");
         } else if (jawab.equals("benar") && kuis.equals("suara")) {
             // set jawaban benar
-            textViewJawab.setText(jawab);
+            textViewJawab.setText("Jawaban Benar");
             // panggil add nilai
             TempScore.addScoreSuara();
 

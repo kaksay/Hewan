@@ -3,7 +3,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8cd721"
+    android:background="@drawable/kuis"
     android:gravity="center"
     android:orientation="vertical">
 
@@ -14,7 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
         android:gravity="center"
-        android:text="Pilih Game mu"
+        android:text="Pilih Game Mu"
+        android:textColor="#ffff1619"
         android:textSize="30dp" />
 
     <Button

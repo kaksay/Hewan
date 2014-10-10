@@ -113,7 +113,7 @@ public class TebakSuaraActivity extends Activity implements View.OnClickListener
         List<GamesSuara> suaraList = database.listSuara();
 
         // buat nilai random
-        int randInt = randInt(0, 1);
+        int randInt = randInt(0, 5);
 
         // ambil pertanyaan, pilihan jawaban, jawaban benar dan path suara
         // dari nilai random yang di dapat

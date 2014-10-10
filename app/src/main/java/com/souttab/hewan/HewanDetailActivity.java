@@ -90,7 +90,9 @@ public class HewanDetailActivity extends Activity {
 
     @Override
     protected void onPause() {
-        mediaPlayer.stop();
+        if (mediaPlayer != null) {
+            mediaPlayer.stop();
+        }
         super.onPause();
     }
 }

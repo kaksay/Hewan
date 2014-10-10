@@ -87,7 +87,7 @@ public class TebakGambarActivity extends Activity implements View.OnClickListene
         List<GamesGambar> gamesGambars = database.kuisGambar();
 
         // tentukan nilai random
-        int nilaiRandom = randInt(0, 1);
+        int nilaiRandom = randInt(0, 9);
 
         // ambil data berdasarkan nilai random
         GamesGambar gamesGambar = gamesGambars.get(nilaiRandom);
