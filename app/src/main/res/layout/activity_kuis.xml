@@ -3,7 +3,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/kuis"
+    android:background="@drawable/kuis11"
     android:gravity="center"
     android:orientation="vertical">
 
@@ -26,9 +26,9 @@
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:background="@drawable/button_shadow"
+        android:background="#ff80ff46"
         android:text="Tebak Gambar"
-        android:textColor="#fff"
+        android:textColor="#e7121817"
         android:textSize="30dp" />
 
 
@@ -39,8 +39,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:background="@drawable/button_shadow"
+        android:background="#ff80ff46"
         android:text="Tebak Suara"
-        android:textColor="#fff"
+        android:textColor="#e7121817"
         android:textSize="30dp" />
 </LinearLayout>

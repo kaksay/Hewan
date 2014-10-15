@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/menu"
+    android:background="@drawable/menu1"
     android:gravity="center"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -15,9 +15,9 @@
         android:id="@+id/buttonMenuHewan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_shadow"
+        android:background="#ff80ff46"
         android:text="@string/menu_hewan"
-        android:textColor="#fff"
+        android:textColor="#ffff1914"
         android:textSize="30dp" />
 
     <Button
@@ -25,9 +25,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@drawable/button_shadow"
+        android:background="#ff80ff46"
         android:text="@string/menu_kuis"
-        android:textColor="#fff"
+        android:textColor="#ffff1914"
         android:textSize="30dp" />
 
     <Button
@@ -35,9 +35,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@drawable/button_shadow"
+        android:background="#ff80ff46"
         android:text="@string/menu_keluar"
-        android:textColor="#fff"
+        android:textColor="#ffff1914"
         android:textSize="30dp" />
 
 </LinearLayout>

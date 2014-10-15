@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/blue"
+    android:background="@drawable/ktk"
     android:gravity="center"
     android:orientation="vertical">
 
@@ -45,31 +45,31 @@
 
                 <Button
                     android:id="@+id/buttonJawabA"
-                    android:layout_width="match_parent"
+                    android:layout_width="201dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:background="@drawable/button_shadow"
+                    android:background="#ff80ff46"
                     android:text="New Button"
-                    android:textColor="#fff"
+                    android:textColor="#ffff1914"
                     android:textSize="20dp" />
 
                 <Button
                     android:id="@+id/buttonJawabB"
-                    android:layout_width="match_parent"
+                    android:layout_width="204dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:background="@drawable/button_shadow"
+                    android:background="#ff80ff46"
                     android:text="New Button"
-                    android:textColor="#fff"
+                    android:textColor="#ffff1914"
                     android:textSize="20dp" />
 
                 <Button
                     android:id="@+id/buttonJawabC"
-                    android:layout_width="match_parent"
+                    android:layout_width="202dp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/button_shadow"
+                    android:background="#ff80ff46"
                     android:text="New Button"
-                    android:textColor="#fff"
+                    android:textColor="#ffff1914"
                     android:textSize="20dp" />
             </LinearLayout>
 
