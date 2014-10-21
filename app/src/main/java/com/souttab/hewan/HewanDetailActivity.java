@@ -11,13 +11,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.souttab.hewan.entity.Hewan;
-import com.souttab.hewan.util.ConvertImage;
 import com.souttab.hewan.util.MyDatabase;
+
+import pl.droidsonroids.gif.GifImageView;
 
 public class HewanDetailActivity extends Activity {
 
     TextView textViewPenjelasan, textViewNama, textViewOrdo, textViewFamily, textViewKelas;
-    ImageView imageViewGambar, imageViewSuara;
+    GifImageView imageViewGambar;
+    ImageView imageViewSuara;
     MediaPlayer mediaPlayer;
     MyDatabase database;
     String suara;
@@ -65,7 +67,7 @@ public class HewanDetailActivity extends Activity {
 
     void onCreatedComp() {
         imageViewSuara = (ImageView) findViewById(R.id.imageButtonSuara);
-        imageViewGambar = (ImageView) findViewById(R.id.imageViewGambarDetail);
+        imageViewGambar = (GifImageView) findViewById(R.id.imageViewGambarDetail);
         textViewPenjelasan = (TextView) findViewById(R.id.textViewPenjelasanDetail);
         textViewNama = (TextView) findViewById(R.id.textViewNamaHewanDetail);
         textViewOrdo = (TextView) findViewById(R.id.textViewOrdoDetail);
@@ -78,8 +80,11 @@ public class HewanDetailActivity extends Activity {
         // ambil data dari database
         Hewan hewan = database.getHewan(id);
 
+        final int gambar = getResources().getIdentifier(hewan.getSuara(), "drawable", getPackageName());
+
         // set data ke variable di layout
-        imageViewGambar.setImageBitmap(ConvertImage.getImage(hewan.getGambar()));
+//        imageViewGambar.setImageBitmap(ConvertImage.getImage(hewan.getGambar()));
+        imageViewGambar.setImageResource(gambar);
         textViewPenjelasan.setText("Penjelasan : \n" + hewan.getPenjelasan());
         textViewNama.setText("Nama : " + hewan.getNama());
         textViewOrdo.setText("Ordo : " + hewan.getOrde());
