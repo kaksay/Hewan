@@ -28,5 +28,6 @@
         <activity android:name=".HasilActivity" />
         <activity android:name=".HighScoreActivity" />
         <activity android:name=".UserNameActivity" />
+
     </application>
 </manifest>

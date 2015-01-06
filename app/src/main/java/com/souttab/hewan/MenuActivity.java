@@ -38,6 +38,7 @@ public class MenuActivity extends Activity implements View.OnClickListener {
         Button buttonKuis = (Button) findViewById(R.id.buttonMenuKuis);
         Button buttonKeluar = (Button) findViewById(R.id.buttonMenuKeluar);
 
+
         // rubah type font
         // ambil font yang ada di asset
         Typeface font = Typeface.createFromAsset(getAssets(), "GrandHotel_Regular.otf");
@@ -68,7 +69,6 @@ public class MenuActivity extends Activity implements View.OnClickListener {
                 suara.klik();
                 startActivity(intent);
                 break;
-
             case R.id.buttonMenuKeluar:
                 suara.klik();
                 finish();
