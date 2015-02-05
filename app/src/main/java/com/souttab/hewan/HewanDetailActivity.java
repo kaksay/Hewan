@@ -17,12 +17,12 @@ import pl.droidsonroids.gif.GifImageView;
 
 public class HewanDetailActivity extends Activity {
 
-    TextView textViewPenjelasan, textViewNama, textViewOrdo, textViewFamily, textViewKelas;
+    TextView textViewPenjelasan;
     GifImageView imageViewGambar;
-    ImageView imageViewSuara;
+    ImageView imageViewSuara, imageViewSuaraPenjelasan;
     MediaPlayer mediaPlayer;
     MyDatabase database;
-    String suara;
+    String suara, namaHewan;
     int resIdSuaraHewan;
 
     @Override
@@ -42,11 +42,8 @@ public class HewanDetailActivity extends Activity {
 
         // rubah font
         Typeface font = Typeface.createFromAsset(getAssets(), "Action_Man.ttf");
-        textViewFamily.setTypeface(font);
-        textViewKelas.setTypeface(font);
-        textViewNama.setTypeface(font);
-        textViewOrdo.setTypeface(font);
         textViewPenjelasan.setTypeface(font);
+
         // set data ke layout
         setData(id);
         if (!suara.isEmpty()) {
@@ -54,11 +51,24 @@ public class HewanDetailActivity extends Activity {
             Log.i("suara", suara);
         }
 
+        // suara hewan
         imageViewSuara.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 mediaPlayer = MediaPlayer.create(getApplicationContext(), resIdSuaraHewan);
+                mediaPlayer.start();
+            }
+        });
+
+
+        // check nama hewan
+        final int reIdSuaraPenjelasan = getResources().getIdentifier("d_"+suara, "raw", getPackageName());
+        // suara penjelasan hewan
+        imageViewSuaraPenjelasan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mediaPlayer = MediaPlayer.create(getApplicationContext(), reIdSuaraPenjelasan);
                 mediaPlayer.start();
             }
         });
@@ -69,10 +79,8 @@ public class HewanDetailActivity extends Activity {
         imageViewSuara = (ImageView) findViewById(R.id.imageButtonSuara);
         imageViewGambar = (GifImageView) findViewById(R.id.imageViewGambarDetail);
         textViewPenjelasan = (TextView) findViewById(R.id.textViewPenjelasanDetail);
-        textViewNama = (TextView) findViewById(R.id.textViewNamaHewanDetail);
-        textViewOrdo = (TextView) findViewById(R.id.textViewOrdoDetail);
-        textViewFamily = (TextView) findViewById(R.id.textViewFamilyDetail);
-        textViewKelas = (TextView) findViewById(R.id.textViewKelasDetail);
+        imageViewSuaraPenjelasan = (ImageView) findViewById(R.id.imageButtonSuaraPenjelasan);
+
     }
 
     // untuk masukin data ke layout
@@ -83,14 +91,12 @@ public class HewanDetailActivity extends Activity {
         final int gambar = getResources().getIdentifier(hewan.getSuara(), "drawable", getPackageName());
 
         // set data ke variable di layout
-//        imageViewGambar.setImageBitmap(ConvertImage.getImage(hewan.getGambar()));
+        // imageViewGambar.setImageBitmap(ConvertImage.getImage(hewan.getGambar()));
         imageViewGambar.setImageResource(gambar);
-        textViewPenjelasan.setText("Penjelasan : \n" + hewan.getPenjelasan());
-        textViewNama.setText("Nama : " + hewan.getNama());
-        textViewOrdo.setText("Ordo : " + hewan.getOrde());
-        textViewFamily.setText("Family : " + hewan.getFamily());
-        textViewKelas.setText("Kelas : " + hewan.getKelas());
         suara = hewan.getSuara();
+
+        // suara penjelasan hewan
+        namaHewan = hewan.getNama();
     }
 
     @Override
@@ -99,5 +105,13 @@ public class HewanDetailActivity extends Activity {
             mediaPlayer.stop();
         }
         super.onPause();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (mediaPlayer != null) {
+            mediaPlayer.stop();
+        }
+        super.onBackPressed();
     }
 }
